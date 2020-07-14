@@ -1,7 +1,5 @@
 package com.hivetech.mvc.controller;
 
-import com.hivetech.mvc.service.HomeService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -14,7 +12,7 @@ public class HomeController {
     @RequestMapping(value = "/trang-chu", method = RequestMethod.GET)
     public ModelAndView homePage() {
         //model andView
-        ModelAndView mav = new ModelAndView("home");
+        ModelAndView mav = new ModelAndView("web/home");
         return mav;
     }
     @RequestMapping(value = "/springmvc", method = RequestMethod.GET)
