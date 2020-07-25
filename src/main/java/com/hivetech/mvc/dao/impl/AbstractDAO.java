@@ -20,6 +20,7 @@ public class AbstractDAO<T> implements GenericDAO<T> {
 	// ResourceBundle resourceBundle = ResourceBundle.getBundle("db");
 	
 	public Connection getConnection() {
+		Connection connection = null;
 		try {
 			/*Class.forName(resourceBundle.getString("driverName"));
 			String url = resourceBundle.getString("url");
@@ -27,14 +28,19 @@ public class AbstractDAO<T> implements GenericDAO<T> {
 			String password = resourceBundle.getString("password"); */
 
 			Class.forName("com.mysql.jdbc.Driver");
-			String url ="jdbc:mysql://localhost:3306/ontapDatabase";
+			String url ="jdbc:mysql://127.0.0.1:3311/jspservletjdbc?serverTimezone=UTC";
 			String user = "root";
 			String password = "hieuthuy12";
-
-			return DriverManager.getConnection(url, user, password);
+			connection = DriverManager.getConnection(url, user, password);
+			return connection;
 		} catch (ClassNotFoundException | SQLException e) {
-			return null;
+
+			System.err.println("Cannot connect to database server");
+			System.err.println(e.getMessage());
+			e.printStackTrace();
 		}
+		return null;
+
 	}
 
 	@Override
