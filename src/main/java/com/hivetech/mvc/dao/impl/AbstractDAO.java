@@ -18,7 +18,7 @@ import java.util.ResourceBundle;
 public class AbstractDAO<T> implements GenericDAO<T> {
 
 	// ResourceBundle resourceBundle = ResourceBundle.getBundle("db");
-	
+
 	public Connection getConnection() {
 		Connection connection = null;
 		try {
@@ -27,8 +27,8 @@ public class AbstractDAO<T> implements GenericDAO<T> {
 			String user = resourceBundle.getString("user");
 			String password = resourceBundle.getString("password"); */
 
-			Class.forName("com.mysql.jdbc.Driver");
-			String url ="jdbc:mysql://127.0.0.1:3311/jspservletjdbc?serverTimezone=UTC";
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			String url ="jdbc:mysql://localhost:33061/ontapDatabase";
 			String user = "root";
 			String password = "hieuthuy12";
 			connection = DriverManager.getConnection(url, user, password);

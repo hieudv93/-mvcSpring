@@ -1,7 +1,9 @@
 package com.hivetech.mvc.controller.admin;
 
+import com.hivetech.mvc.entity.NewEntity;
 import com.hivetech.mvc.model.NewModel;
 import com.hivetech.mvc.service.impl.NewService;
+import com.hivetech.mvc.service.impl.NewServiceJPAImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -13,11 +15,20 @@ import org.springframework.web.servlet.ModelAndView;
 public class NewController {
 	@Autowired
 	private NewService newService;
+	@Autowired
+	private NewServiceJPAImpl newServiceJPA;
 
 	@RequestMapping(value = "/quan-tri/bai-viet/danh-sach", method = RequestMethod.GET)
-	public ModelAndView showList(@ModelAttribute("model")NewModel model) {
+//	public ModelAndView showList(@ModelAttribute("model")NewModel model) {
+//		ModelAndView mav = new ModelAndView("admin/new/list");
+//		model.setListResult(newService.findAll());
+//		mav.addObject("model",model);
+//		return mav;
+//	}
+
+	public ModelAndView showList(@ModelAttribute("model") NewEntity model) {
 		ModelAndView mav = new ModelAndView("admin/new/list");
-		model.setListResult(newService.findAll());
+		newService.findAll();
 		mav.addObject("model",model);
 		return mav;
 	}

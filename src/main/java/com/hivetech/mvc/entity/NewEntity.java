@@ -1,6 +1,9 @@
 package com.hivetech.mvc.entity;
 
+import com.hivetech.mvc.model.NewModel;
+
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "new")
@@ -60,4 +63,5 @@ public class NewEntity {
     public void setContent(String content) {
         this.content = content;
     }
+
 }
