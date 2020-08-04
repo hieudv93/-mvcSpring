@@ -57,7 +57,7 @@ public class JPAConfig {
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/springmvc");
+        dataSource.setUrl("jdbc:mysql://127.0.0.1:3311/spring_mvc?useTimezone=true&serverTimezone=GMT");
         dataSource.setUsername("root");
         dataSource.setPassword("hieuthuy12");
         return dataSource;
@@ -65,8 +65,9 @@ public class JPAConfig {
 
     Properties additionalProperties() {
         Properties properties = new Properties();
-        properties.setProperty("hibernate.hbm2ddl.auto", "create-drop");
-       // properties.setProperty("hibernate.hbm2ddl.auto", "none");
+     // properties.setProperty("hibernate.hbm2ddl.auto", "create-drop");
+        properties.setProperty("hibernate.hbm2ddl.auto", "create");
+     //   properties.setProperty("hibernate.hbm2ddl.auto", "none");
         properties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
         return properties;
     }

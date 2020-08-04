@@ -28,7 +28,7 @@ public class NewController {
 
 	public ModelAndView showList(@ModelAttribute("model") NewEntity model) {
 		ModelAndView mav = new ModelAndView("admin/new/list");
-		newService.findAll();
+		newServiceJPA.finaAll();
 		mav.addObject("model",model);
 		return mav;
 	}

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<decorators defaultdir="/decorators">
+
+	
+    <decorator name="web" page="web.jsp">
+       <pattern>/*</pattern>
+    </decorator>
+    
+    <decorator name="admin" page="admin.jsp">
+       <pattern>/quan-tri*</pattern>
+    </decorator>
+<!-- file nay khai bao cho controller,
+ khi co nhieu controller len thi se khai bao vat vat  filter tat cac ui cac
+  vi du  : khi controller xuaat hien them cac file  thi phai khai bao o day
+     <decorator name="home" page="admin.jsp">
+       <pattern>/home</pattern>
+    </decorator>
+ -->
+</decorators>
